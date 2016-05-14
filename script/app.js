@@ -15,7 +15,7 @@ gameListApp.factory("appsFactory", ['$http', function ($http) {
 	var factory = {};
 	
 	factory.getApps = function() {
-		return $http.get('data.json');
+		return $http.get('gamFiddlerResponse.json');
 	};
 
 	return factory;
@@ -25,7 +25,7 @@ gameListApp.controller("AppsController", function($scope, $routeParams, appsFact
 	$scope.samples = [{ name: "Loading..." }];
 		
 	appsFactory.getApps().then(function (response) {
-		$scope.apps = response.data.apps;
+		$scope.apps = response.data[1][1];
 	});
     	
 });
