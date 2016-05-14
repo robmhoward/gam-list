@@ -15,7 +15,7 @@ gameListApp.factory("appsFactory", ['$http', function ($http) {
 	var factory = {};
 	
 	factory.getApps = function() {
-		return $http.get('gamFiddlerResponse.json');
+		return apps;
 	};
 
 	return factory;
