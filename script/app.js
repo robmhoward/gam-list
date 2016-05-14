@@ -25,7 +25,7 @@ gameListApp.controller("AppsController", function($scope, $routeParams, appsFact
 	$scope.samples = [{ name: "Loading..." }];
 		
 	appsFactory.getApps().then(function (response) {
-		$scope.apps = response.data[1][1];
+		$scope.apps = response.data;
 	});
     	
 });
