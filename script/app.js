@@ -22,10 +22,7 @@ gameListApp.factory("appsFactory", ['$http', function ($http) {
 }]);
 
 gameListApp.controller("AppsController", function($scope, $routeParams, appsFactory) {
-	$scope.samples = [{ name: "Loading..." }];
 		
-	appsFactory.getApps().then(function (response) {
-		$scope.apps = response.data;
-	});
+	$scope.apps =  appsFactory.getApps();
     	
 });
